@@ -122,6 +122,9 @@ public class Mccree : MonoBehaviour {
 				break;
 			}
 		}
+		m_hpBar.transform.rotation = Camera.main.transform.rotation;
+		m_energyBar.transform.rotation = Camera.main.transform.rotation;
+		m_labelBlood.transform.rotation = Camera.main.transform.rotation;
 	}
 
 	void moveToNext(){
@@ -163,5 +166,6 @@ public class Mccree : MonoBehaviour {
 		currEnergy=0;
 		skillReady = false;
 		recoverRemain = recoverEnergyInterval;
+		SkillMgr.getInstance ().ShowSkillCut (0);
 	}
 }

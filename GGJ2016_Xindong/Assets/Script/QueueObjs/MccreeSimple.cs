@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MccreeSimple : MonoBehaviour {
 	public GameObject m_model;
+	public Animation m_anim;
 
 	public int currTargetIndex=0;
 	public float speed = 5.0f;

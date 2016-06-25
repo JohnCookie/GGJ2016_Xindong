@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 09eda2d0938164f28b9161ddbb5d82ad
+timeCreated: 1466848971
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - m_model: {instanceID: 0}
+  - m_labelBlood: {fileID: 11465114, guid: 196ad927f83934f9ba69d776171b1aed, type: 2}
+  - m_hpBar: {fileID: 11418210, guid: 196ad927f83934f9ba69d776171b1aed, type: 2}
+  - m_energyBar: {fileID: 11425402, guid: 196ad927f83934f9ba69d776171b1aed, type: 2}
+  - anim: {fileID: 11105988, guid: 196ad927f83934f9ba69d776171b1aed, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ReinhartSimple: MonoBehaviour {
 	public GameObject m_model;
+	public Animation m_anim;
 
 	public int currTargetIndex=0;
 	public float speed = 5.0f;
@@ -32,6 +33,8 @@ public class ReinhartSimple: MonoBehaviour {
 			transform.localPosition = PathMgr.getInstance().getDefPrepareNextPath(currTargetIndex).localPosition;
 		}
 		moveToNext();
+		m_anim.wrapMode = WrapMode.Loop;
+		m_anim.Play ("Walk");
 		inited = true;
 	}
 

@@ -7,6 +7,7 @@ public class WorldMgr : MonoBehaviour
 	public Transform charRoot;
 	public GameObject m_prefabMccree;
 	public GameObject m_prefabReinhart;
+	public GameObject m_prefabLucio;
 
 	public float enermyNearDistance = 60.0f;
 	public float friendlyNearDistance = 40.0f;
@@ -74,6 +75,19 @@ public class WorldMgr : MonoBehaviour
 			}else{
 				player2.name = "ReinhartB"+defSoldiers.Count;
 				defSoldiers.Add(player2);
+			}
+			break;
+		case 2:
+			GameObject player3 = Instantiate(m_prefabLucio) as GameObject;
+			player3.transform.parent = charRoot;
+			player3.transform.localScale = Vector3.one;
+			player3.GetComponent<Lucio>().Init(path, isAtk);
+			if(isAtk){
+				player3.name = "LucioA"+atkSoldiers.Count;
+				atkSoldiers.Add(player3);
+			}else{
+				player3.name = "LucioB"+defSoldiers.Count;
+				defSoldiers.Add(player3);
 			}
 			break;
 		}
@@ -144,6 +158,8 @@ public class WorldMgr : MonoBehaviour
 				checkTeam[0].GetComponent<Mccree>().getHurt(damage);
 			}else if(checkTeam[0].GetComponent<Reinhart>()!=null){
 				checkTeam[0].GetComponent<Reinhart>().getHurt(damage);
+			}else if(checkTeam[0].GetComponent<Lucio>()!=null){
+				checkTeam[0].GetComponent<Lucio>().getHurt(damage);
 			}
 		}
 	}
@@ -164,6 +180,12 @@ public class WorldMgr : MonoBehaviour
 						atkSoldiers[i].GetComponent<Reinhart>().useSkill();
 						break;
 					}
+				}else if(atkSoldiers[i].GetComponent<Lucio>()!=null){
+					if(atkSoldiers[i].GetComponent<Lucio>().getSoldierPath() == field && atkSoldiers[i].GetComponent<Lucio>().isSkillReady()>=0){
+						Debug.Log("path: "+field+" Use Skill 2");
+						atkSoldiers[i].GetComponent<Lucio>().useSkill();
+						break;
+					}
 				}
 			}
 		}else{
@@ -178,6 +200,12 @@ public class WorldMgr : MonoBehaviour
 					if(defSoldiers[i].GetComponent<Reinhart>().getSoldierPath() == field && defSoldiers[i].GetComponent<Reinhart>().isSkillReady()>=0){
 						Debug.Log("path: "+field+" Use Skill 1");
 						defSoldiers[i].GetComponent<Reinhart>().useSkill();
+						break;
+					}
+				}else if(defSoldiers[i].GetComponent<Lucio>()!=null){
+					if(defSoldiers[i].GetComponent<Lucio>().getSoldierPath() == field && defSoldiers[i].GetComponent<Lucio>().isSkillReady()>=0){
+						Debug.Log("path: "+field+" Use Skill 2");
+						defSoldiers[i].GetComponent<Lucio>().useSkill();
 						break;
 					}
 				}
