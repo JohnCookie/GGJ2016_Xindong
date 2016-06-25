@@ -14,9 +14,9 @@ public class Lucio : MonoBehaviour {
 	Vector3 moveTarget;
 	Vector3 moveTargetWorld;
 	float currMoveTime=0.0f;
-	int maxHp = 200;
-	int currHp = 200;
-	public int damage = 5;
+	int maxHp = 100;
+	int currHp = 100;
+	public int damage = 8;
 	float atkInterval = 3.0f;
 	float atkTimeRemain = 3.0f;
 

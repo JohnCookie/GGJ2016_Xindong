@@ -23,24 +23,28 @@ public class SkillObj : MonoBehaviour
 			m_texReinhart.gameObject.SetActive (false);
 			m_texLucio.gameObject.SetActive (false);
 			m_texSoldier76.gameObject.SetActive (false);
+			AudioControler.getInstance().playMrrcee();
 			break;
 		case 1:
 			m_texMccree.gameObject.SetActive (false);
 			m_texReinhart.gameObject.SetActive (true);
 			m_texLucio.gameObject.SetActive (false);
 			m_texSoldier76.gameObject.SetActive (false);
+			AudioControler.getInstance().playReinhart();
 			break;
 		case 2:
 			m_texMccree.gameObject.SetActive (false);
 			m_texReinhart.gameObject.SetActive (false);
 			m_texLucio.gameObject.SetActive (true);
 			m_texSoldier76.gameObject.SetActive (false);
+			AudioControler.getInstance().playLucio();
 			break;
 		case 3:
 			m_texMccree.gameObject.SetActive (false);
 			m_texReinhart.gameObject.SetActive (false);
 			m_texLucio.gameObject.SetActive (false);
 			m_texSoldier76.gameObject.SetActive (true);
+			AudioControler.getInstance().playSoldier();
 			break;
 		}
 

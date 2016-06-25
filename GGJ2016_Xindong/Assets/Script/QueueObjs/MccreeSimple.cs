@@ -33,6 +33,8 @@ public class MccreeSimple : MonoBehaviour {
 			transform.localPosition = PathMgr.getInstance().getDefPrepareNextPath(currTargetIndex).localPosition;
 		}
 		moveToNext();
+		m_anim.wrapMode = WrapMode.Loop;
+		m_anim.Play ("Walk");
 		inited = true;
 	}
 

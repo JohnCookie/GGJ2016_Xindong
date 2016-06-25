@@ -12,6 +12,7 @@ public class QueueMgr : MonoBehaviour
 	public GameObject m_prefabMccree;
 	public GameObject m_prefabReinhart;
 	public GameObject m_prefabLucio;
+	public GameObject m_prefabSoldier;
 	List<GameObject> m_prefabList =  new List<GameObject>();
 
 	float createTimeRemain = 3.0f;
@@ -33,6 +34,7 @@ public class QueueMgr : MonoBehaviour
 		m_prefabList.Add(m_prefabMccree);
 		m_prefabList.Add(m_prefabReinhart);
 		m_prefabList.Add (m_prefabLucio);
+		m_prefabList.Add(m_prefabSoldier);
 	}
 
 	// Use this for initialization
@@ -72,6 +74,9 @@ public class QueueMgr : MonoBehaviour
 		case 2:
 			player = Instantiate (m_prefabLucio) as GameObject;
 			break;
+		case 3:
+			player = Instantiate(m_prefabSoldier) as GameObject;
+			break;
 		default:
 			player = Instantiate(m_prefabMccree) as GameObject;
 			break;
@@ -90,6 +95,9 @@ public class QueueMgr : MonoBehaviour
 			case 2:
 				player.GetComponent<LucioSimple>().Init(4, isAtk);
 				break;
+			case 3:
+				player.GetComponent<SodlierSimple>().Init(4, isAtk);
+				break;
 			default:
 				player.GetComponent<MccreeSimple>().Init(4, isAtk);
 				break;
@@ -104,6 +112,9 @@ public class QueueMgr : MonoBehaviour
 				break;
 			case 2:
 				player.GetComponent<LucioSimple>().Init(5, isAtk);
+				break;
+			case 3:
+				player.GetComponent<SodlierSimple>().Init(5, isAtk);
 				break;
 			default:
 				player.GetComponent<MccreeSimple>().Init(5, isAtk);
@@ -153,6 +164,9 @@ public class QueueMgr : MonoBehaviour
 				}else if(atkSoldiers[0].GetComponent<LucioSimple>()!=null){
 					firstPrepared = atkSoldiers[0].GetComponent<LucioSimple>().isPrepared();
 					createType = 2;
+				}else if(atkSoldiers[0].GetComponent<SodlierSimple>()!=null){
+					firstPrepared = atkSoldiers[0].GetComponent<SodlierSimple>().isPrepared();
+					createType = 3;
 				}
 				if(firstPrepared){
 					Destroy(atkSoldiers[0].gameObject);
@@ -177,6 +191,9 @@ public class QueueMgr : MonoBehaviour
 				}else if(defSoldiers[0].GetComponent<LucioSimple>()!=null){
 					firstPrepared = defSoldiers[0].GetComponent<LucioSimple>().isPrepared();
 					createType = 2;
+				}else if(defSoldiers[0].GetComponent<SodlierSimple>()!=null){
+					firstPrepared = defSoldiers[0].GetComponent<SodlierSimple>().isPrepared();
+					createType = 3;
 				}
 				if(firstPrepared){
 					Destroy(defSoldiers[0].gameObject);

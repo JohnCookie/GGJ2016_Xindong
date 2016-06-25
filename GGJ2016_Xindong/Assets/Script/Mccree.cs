@@ -6,6 +6,7 @@ public class Mccree : MonoBehaviour {
 	public UILabel m_labelBlood;
 	public UIProgressBar m_hpBar;
 	public UIProgressBar m_energyBar;
+	public Animation anim;
 
 	public int currTargetIndex=0;
 	public float speed = 5.0f;
@@ -52,6 +53,8 @@ public class Mccree : MonoBehaviour {
 			transform.localPosition = PathMgr.getInstance().getDefNextPath(currTargetIndex, path).localPosition;
 		}
 		moveToNext();
+		anim.wrapMode = WrapMode.Loop;
+		anim.Play ("Walk");
 		inited = true;
 	}
 
@@ -63,6 +66,7 @@ public class Mccree : MonoBehaviour {
 		if(inited){
 			if(!WorldMgr.getInstance().getUnderBattle()){
 				status = 0;
+				anim.Play ("Walk");
 			}
 
 			// recover Energy
@@ -94,9 +98,11 @@ public class Mccree : MonoBehaviour {
 							if(status!=1){
 								Debug.Log(gameObject.name+" Attack");
 								status = 1;
+								anim.Play ("Attack");
 							}
 						}else{
 							status = 0;
+							anim.Play ("Walk");
 						}
 						return;	
 					}
@@ -104,6 +110,7 @@ public class Mccree : MonoBehaviour {
 						if(status!=1){
 							Debug.Log(gameObject.name+" Attack");
 							status = 1;
+							anim.Play ("Attack");
 						}
 						return;
 					}

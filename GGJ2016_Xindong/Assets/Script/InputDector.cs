@@ -3,10 +3,10 @@ using System.Collections;
 
 public class InputDector : MonoBehaviour
 {
-	Vector3 cameraForward = new Vector3 (0, 0, 0.1f);
-	Vector3 cameraBackward = new Vector3 (0, 0, -0.1f);
-	Vector3 cameraLeft = new Vector3 (-0.1f, 0, 0);
-	Vector3 cameraRight = new Vector3 (0.1f, 0, 0);
+	Vector3 cameraForward = new Vector3 (0, 0, 1);
+	Vector3 cameraBackward = new Vector3 (0, 0, -1);
+	Vector3 cameraLeft = new Vector3 (-1f, 0, 0);
+	Vector3 cameraRight = new Vector3 (1f, 0, 0);
 
 	// Update is called once per frame
 	void Update ()
