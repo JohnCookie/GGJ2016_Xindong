@@ -147,6 +147,7 @@ public class Soldier : MonoBehaviour {
 	}
 
 	public void getHurt(int damage){
+		EffectMgr.getInstance().ShowEffect(gameObject, 1);
 		currHp-=damage;
 		m_labelBlood.text = currHp.ToString();
 		m_hpBar.value = (float)((float)currHp/(float)maxHp);

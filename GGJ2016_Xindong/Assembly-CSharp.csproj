@@ -183,6 +183,7 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
      <Compile Include="Assets\Script\AudioControler.cs" />
+     <Compile Include="Assets\Script\EffectMgr.cs" />
      <Compile Include="Assets\Script\InputDector.cs" />
      <Compile Include="Assets\Script\Lucio.cs" />
      <Compile Include="Assets\Script\Mccree.cs" />
