@@ -1,15 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\WorldMgr.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Reinhart.cs">
     <Files>
-      <File FileName="Assets\Script\QueueObjs\MccreeSimple.cs" Line="16" Column="20" />
-      <File FileName="Assets\Script\WorldMgr.cs" Line="164" Column="6" />
-      <File FileName="Assets\Script\Mccree.cs" Line="162" Column="54" />
-      <File FileName="Assets\Script\Reinhart.cs" Line="161" Column="54" />
-      <File FileName="Assets\Script\PathMgr.cs" Line="79" Column="15" />
-      <File FileName="Assets\Script\InputDector.cs" Line="67" Column="44" />
-      <File FileName="Assets\Script\QueueMgr.cs" Line="78" Column="17" />
-      <File FileName="Assets\Script\QueueObjs\ReinhartSimple.cs" Line="4" Column="28" />
+      <File FileName="Assets/Script/Reinhart.cs" Line="176" Column="44" />
+      <File FileName="Assets/Script/QueueObjs/ReinhartSimple.cs" Line="36" Column="1" />
+      <File FileName="Assets/Script/QueueObjs/MccreeSimple.cs" Line="6" Column="26" />
+      <File FileName="Assets/Script/Lucio.cs" Line="177" Column="42" />
+      <File FileName="Assets/Script/QueueObjs/LucioSimple.cs" Line="4" Column="25" />
+      <File FileName="Assets/Script/InputDector.cs" Line="61" Column="33" />
+      <File FileName="Assets/Script/PathMgr.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/QueueMgr.cs" Line="179" Column="20" />
+      <File FileName="Assets/Script/WorldMgr.cs" Line="174" Column="50" />
+      <File FileName="Assets/Script/Mccree.cs" Line="168" Column="41" />
+      <File FileName="Assets/Script/SkillObj.cs" Line="60" Column="26" />
+      <File FileName="Assets/Script/SkillMgr.cs" Line="26" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
