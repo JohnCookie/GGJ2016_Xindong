@@ -1,0 +1,19 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\WorldMgr.cs">
+    <Files>
+      <File FileName="Assets\Script\QueueObjs\MccreeSimple.cs" Line="16" Column="20" />
+      <File FileName="Assets\Script\WorldMgr.cs" Line="164" Column="6" />
+      <File FileName="Assets\Script\Mccree.cs" Line="162" Column="54" />
+      <File FileName="Assets\Script\Reinhart.cs" Line="161" Column="54" />
+      <File FileName="Assets\Script\PathMgr.cs" Line="79" Column="15" />
+      <File FileName="Assets\Script\InputDector.cs" Line="67" Column="44" />
+      <File FileName="Assets\Script\QueueMgr.cs" Line="78" Column="17" />
+      <File FileName="Assets\Script\QueueObjs\ReinhartSimple.cs" Line="4" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
