@@ -14,13 +14,13 @@ public class Reinhart : MonoBehaviour {
 	Vector3 moveTarget;
 	Vector3 moveTargetWorld;
 	float currMoveTime=0.0f;
-	int maxHp = 200;
-	int currHp = 200;
+	int maxHp = 180;
+	int currHp = 180;
 	public int damage = 5;
-	float atkInterval = 3.0f;
-	float atkTimeRemain = 3.0f;
+	float atkInterval = 4.0f;
+	float atkTimeRemain = 4.0f;
 
-	float maxEnergy = 100;
+	float maxEnergy = 150;
 	float currEnergy = 0;
 	float recoverEnergyInterval = 0.5f;
 	float recoverRemain = 0.5f;
@@ -122,6 +122,7 @@ public class Reinhart : MonoBehaviour {
 				atkTimeRemain-=Time.deltaTime;
 				if(atkTimeRemain<0){
 					//make attack
+					EffectMgr.getInstance().ShowEffect(gameObject, 2);
 					WorldMgr.getInstance().makeDamage(isAtk, damage);
 					atkTimeRemain=atkInterval;
 				}
@@ -154,6 +155,8 @@ public class Reinhart : MonoBehaviour {
 		if(currHp<=0){
 			WorldMgr.getInstance().destroyPlayer(gameObject);
 			Destroy(gameObject);
+		}else if (currHp >= maxHp) {
+			currHp = maxHp;
 		}
 	}
 
@@ -170,11 +173,10 @@ public class Reinhart : MonoBehaviour {
 	}
 
 	public void useSkill(){
-		WorldMgr.getInstance().makeDamage(isAtk, damage*2);
+		WorldMgr.getInstance().makeAoeDamage(isAtk, damage*2);
 		currEnergy=0;
 		skillReady = false;
 		recoverRemain = recoverEnergyInterval;
 		SkillMgr.getInstance ().ShowSkillCut (1);
-		EffectMgr.getInstance().ShowEffect(gameObject, 2);
 	}
 }

@@ -7,10 +7,6 @@ Project("{697B87A5-4F08-7084-76A4-0E019F9FECA7}") = "GGJ2016_Xindong", "Assembly
 EndProject
 Project("{697B87A5-4F08-7084-76A4-0E019F9FECA7}") = "GGJ2016_Xindong", "Assembly-CSharp-Editor.csproj", "{B57A43E5-BC3C-BD2C-4F7A-1AA0A2DF679E}"
 EndProject
-Project("{697B87A5-4F08-7084-76A4-0E019F9FECA7}") = "GGJ2016_Xindong", "Assembly-UnityScript.unityproj", "{42483657-6BEE-FC8F-F765-3B8036200468}"
-EndProject
-Project("{697B87A5-4F08-7084-76A4-0E019F9FECA7}") = "GGJ2016_Xindong", "Assembly-UnityScript-Editor.unityproj", "{222ABB6C-B497-254F-187F-541C99B2F02D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,14 +25,6 @@ Global
 		{B57A43E5-BC3C-BD2C-4F7A-1AA0A2DF679E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B57A43E5-BC3C-BD2C-4F7A-1AA0A2DF679E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B57A43E5-BC3C-BD2C-4F7A-1AA0A2DF679E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42483657-6BEE-FC8F-F765-3B8036200468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42483657-6BEE-FC8F-F765-3B8036200468}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42483657-6BEE-FC8F-F765-3B8036200468}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42483657-6BEE-FC8F-F765-3B8036200468}.Release|Any CPU.Build.0 = Release|Any CPU
-		{222ABB6C-B497-254F-187F-541C99B2F02D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{222ABB6C-B497-254F-187F-541C99B2F02D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{222ABB6C-B497-254F-187F-541C99B2F02D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{222ABB6C-B497-254F-187F-541C99B2F02D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,14 +17,14 @@ public class Mccree : MonoBehaviour {
 	int maxHp = 100;
 	int currHp = 100;
 	public int damage = 10;
-	float atkInterval = 2.0f;
-	float atkTimeRemain = 2.0f;
+	float atkInterval = 3.0f;
+	float atkTimeRemain = 3.0f;
 
 	float maxEnergy = 100;
 	float currEnergy = 0;
 	float recoverEnergyInterval = 0.5f;
 	float recoverRemain = 0.5f;
-	float recoverSpeed = 5;
+	float recoverSpeed = 4;
 
 	bool inited = false;
 	int path = 2;
@@ -154,6 +154,8 @@ public class Mccree : MonoBehaviour {
 		if(currHp<=0){
 			WorldMgr.getInstance().destroyPlayer(gameObject);
 			Destroy(gameObject);
+		}else if (currHp >= maxHp) {
+			currHp = maxHp;
 		}
 	}
 
@@ -170,7 +172,7 @@ public class Mccree : MonoBehaviour {
 	}
 
 	public void useSkill(){
-		WorldMgr.getInstance().makeDamage(isAtk, damage*2);
+		WorldMgr.getInstance().makeAoeDamage(isAtk, damage*2);
 		currEnergy=0;
 		skillReady = false;
 		recoverRemain = recoverEnergyInterval;

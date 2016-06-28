@@ -5,6 +5,7 @@ public class EffectMgr : MonoBehaviour
 {
 	public GameObject m_fireEffect;
 	public GameObject m_aoeEffect;
+	public GameObject m_healEffect;
 
 	public Transform root;
 
@@ -43,6 +44,13 @@ public class EffectMgr : MonoBehaviour
 			Destroy(eff2, 5.0f);
 			break;
 		case 3:
+			GameObject eff3 = Instantiate(m_healEffect) as GameObject;
+			eff3.transform.parent = root;
+			eff3.transform.localScale = Vector3.one;
+			eff3.transform.rotation = obj.transform.rotation;
+			eff3.transform.position = obj.transform.position;
+			Destroy(eff3, 5.0f);
+			break;
 			break;
 		}
 	}

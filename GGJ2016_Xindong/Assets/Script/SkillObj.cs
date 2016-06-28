@@ -10,7 +10,7 @@ public class SkillObj : MonoBehaviour
 
 	public TweenPosition mtween;
 
-	float delay = 3.0f;
+	float delay = 1.0f;
 	float curr = 0.0f;
 	bool startDelay = false;
 

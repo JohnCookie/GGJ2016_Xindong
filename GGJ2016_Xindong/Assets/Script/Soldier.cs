@@ -14,17 +14,17 @@ public class Soldier : MonoBehaviour {
 	Vector3 moveTarget;
 	Vector3 moveTargetWorld;
 	float currMoveTime=0.0f;
-	int maxHp = 100;
-	int currHp = 100;
+	int maxHp = 120;
+	int currHp = 120;
 	public int damage = 5;
-	float atkInterval = 3.0f;
-	float atkTimeRemain = 3.0f;
+	float atkInterval = 2.5f;
+	float atkTimeRemain = 2.5f;
 
-	float maxEnergy = 100;
+	float maxEnergy = 120;
 	float currEnergy = 0;
 	float recoverEnergyInterval = 0.5f;
 	float recoverRemain = 0.5f;
-	float recoverSpeed = 5;
+	float recoverSpeed = 4;
 
 	bool inited = false;
 	int path = 2;
@@ -154,6 +154,8 @@ public class Soldier : MonoBehaviour {
 		if(currHp<=0){
 			WorldMgr.getInstance().destroyPlayer(gameObject);
 			Destroy(gameObject);
+		}else if (currHp >= maxHp) {
+			currHp = maxHp;
 		}
 	}
 
@@ -170,7 +172,7 @@ public class Soldier : MonoBehaviour {
 	}
 
 	public void useSkill(){
-		WorldMgr.getInstance().makeDamage(isAtk, damage*2);
+		WorldMgr.getInstance().makeDamage(isAtk, damage*4);
 		currEnergy=0;
 		skillReady = false;
 		recoverRemain = recoverEnergyInterval;

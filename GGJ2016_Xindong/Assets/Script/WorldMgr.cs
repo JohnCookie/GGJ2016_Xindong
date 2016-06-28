@@ -11,7 +11,7 @@ public class WorldMgr : MonoBehaviour
 	public GameObject m_prefabSoldier;
 
 	public float enermyNearDistance = 60.0f;
-	public float friendlyNearDistance = 40.0f;
+	public float friendlyNearDistance = 50.0f;
 
 	List<GameObject> atkSoldiers = new List<GameObject>();
 	List<GameObject> defSoldiers = new List<GameObject>();
@@ -160,6 +160,46 @@ public class WorldMgr : MonoBehaviour
 		return underBattle;
 	}
 
+	public void makeAoeDamage(bool isAtk, int damage){
+		List<GameObject> checkTeam = new List<GameObject>();
+		if(isAtk){
+			checkTeam = defSoldiers;
+		}else{
+			checkTeam = atkSoldiers;
+		}
+		for(int i=0; i<checkTeam.Count; i++){
+			if(checkTeam[i].GetComponent<Mccree>()!=null){
+				checkTeam[i].GetComponent<Mccree>().getHurt(damage);
+			}else if(checkTeam[i].GetComponent<Reinhart>()!=null){
+				checkTeam[i].GetComponent<Reinhart>().getHurt(damage);
+			}else if(checkTeam[i].GetComponent<Lucio>()!=null){
+				checkTeam[i].GetComponent<Lucio>().getHurt(damage);
+			}else if(checkTeam[i].GetComponent<Soldier>()!=null){
+				checkTeam[i].GetComponent<Soldier>().getHurt(damage);
+			}
+		}
+	}
+
+	public void makeAoeHeal(bool isAtk, int heal){
+		List<GameObject> checkTeam = new List<GameObject>();
+		if(isAtk){
+			checkTeam = atkSoldiers;
+		}else{
+			checkTeam = defSoldiers;
+		}
+		for(int i=0; i<checkTeam.Count; i++){
+			if(checkTeam[i].GetComponent<Mccree>()!=null){
+				checkTeam[i].GetComponent<Mccree>().getHurt(heal);
+			}else if(checkTeam[i].GetComponent<Reinhart>()!=null){
+				checkTeam[i].GetComponent<Reinhart>().getHurt(heal);
+			}else if(checkTeam[i].GetComponent<Lucio>()!=null){
+				checkTeam[i].GetComponent<Lucio>().getHurt(heal);
+			}else if(checkTeam[i].GetComponent<Soldier>()!=null){
+				checkTeam[i].GetComponent<Soldier>().getHurt(heal);
+			}
+		}
+	}
+
 	public void makeDamage(bool isAtk, int damage){
 		List<GameObject> checkTeam = new List<GameObject>();
 		if(isAtk){
@@ -180,6 +220,25 @@ public class WorldMgr : MonoBehaviour
 		}
 	}
 
+	public void makeHeal(bool isAtk, int heal){
+		List<GameObject> checkTeam = new List<GameObject>();
+		if(isAtk){
+			checkTeam = atkSoldiers;
+		}else{
+			checkTeam = defSoldiers;
+		}
+		if(checkTeam.Count>0){
+			if(checkTeam[0].GetComponent<Mccree>()!=null){
+				checkTeam[0].GetComponent<Mccree>().getHurt(heal);
+			}else if(checkTeam[0].GetComponent<Reinhart>()!=null){
+				checkTeam[0].GetComponent<Reinhart>().getHurt(heal);
+			}else if(checkTeam[0].GetComponent<Lucio>()!=null){
+				checkTeam[0].GetComponent<Lucio>().getHurt(heal);
+			}else if(checkTeam[0].GetComponent<Soldier>()!=null){
+				checkTeam[0].GetComponent<Soldier>().getHurt(heal);
+			}
+		}
+	}
 
 	public void useSkill(bool isAtk, int field){
 		if(isAtk){

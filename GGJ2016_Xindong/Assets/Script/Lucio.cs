@@ -14,13 +14,13 @@ public class Lucio : MonoBehaviour {
 	Vector3 moveTarget;
 	Vector3 moveTargetWorld;
 	float currMoveTime=0.0f;
-	int maxHp = 100;
-	int currHp = 100;
+	int maxHp = 130;
+	int currHp = 130;
 	public int damage = 8;
 	float atkInterval = 3.0f;
 	float atkTimeRemain = 3.0f;
 
-	float maxEnergy = 100;
+	float maxEnergy = 120;
 	float currEnergy = 0;
 	float recoverEnergyInterval = 0.5f;
 	float recoverRemain = 0.5f;
@@ -122,7 +122,8 @@ public class Lucio : MonoBehaviour {
 				atkTimeRemain-=Time.deltaTime;
 				if(atkTimeRemain<0){
 					//make attack
-					WorldMgr.getInstance().makeDamage(isAtk, damage);
+					EffectMgr.getInstance().ShowEffect(gameObject, 3);
+					WorldMgr.getInstance().makeHeal(isAtk, damage);
 					atkTimeRemain=atkInterval;
 				}
 				break;
@@ -152,9 +153,11 @@ public class Lucio : MonoBehaviour {
 		currHp-=damage;
 		m_labelBlood.text = currHp.ToString();
 		m_hpBar.value = (float)((float)currHp/(float)maxHp);
-		if(currHp<=0){
-			WorldMgr.getInstance().destroyPlayer(gameObject);
-			Destroy(gameObject);
+		if (currHp <= 0) {
+			WorldMgr.getInstance ().destroyPlayer (gameObject);
+			Destroy (gameObject);
+		} else if (currHp >= maxHp) {
+			currHp = maxHp;
 		}
 	}
 
@@ -171,7 +174,7 @@ public class Lucio : MonoBehaviour {
 	}
 
 	public void useSkill(){
-		WorldMgr.getInstance().makeDamage(isAtk, damage*2);
+		WorldMgr.getInstance().makeAoeHeal(isAtk, damage*4);
 		currEnergy=0;
 		skillReady = false;
 		recoverRemain = recoverEnergyInterval;
